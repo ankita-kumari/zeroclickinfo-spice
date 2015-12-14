@@ -10,10 +10,10 @@ use DDG::Spice;
 spice is_cached => 1;
 spice proxy_cache_valid => "200 1d"; # defaults to this automatically
 
-spice wrap_jsonp_callback => 0; # only enable for non-JSONP APIs (i.e. no &callback= parameter)
+spice wrap_jsonp_callback => 1; # only enable for non-JSONP APIs (i.e. no &callback= parameter)
 
 # API endpoint - https://duck.co/duckduckhack/spice_attributes#spice-codetocode
-spice to => 'https://developers.zomato.com/api/v2.1/search?entity_id=6&entity_type=city&count=1&api_key={{ENV{DDG_ZOMATO_API_KEY}}}&jsonp={{callback}}';
+spice to => 'https://developers.zomato.com/api/v2.1/search?entity_id=6&entity_type=city&count=1&user_key={{ENV{DDG_ZOMATO_API_KEY}}}';
 
 # Triggers - https://duck.co/duckduckhack/spice_triggers
 triggers any => 'restaurants in hyderabad';
