@@ -4,18 +4,18 @@
 
         // Validate the response (customize for your Spice)
         if (!api_result || api_result.error) {
-            return Spice.failed('');
+            return Spice.failed('zomato');
         }
 
         // Render the response
         Spice.add({
-            id: "",
+            id: "zomato",
 
             // Customize these properties
-            name: "AnswerBar title",
+            name: "Restaraunts results",
             data: api_result,
             meta: {
-                sourceName: "Example.com",
+                sourceName: "zomato.com",
                 sourceUrl: 'http://example.com/url/to/details/' + api_result.name
             },
             normalize: function(item) {
@@ -27,11 +27,7 @@
                 };
             },
             templates: {
-                group: 'your-template-group',
-                options: {
-                    content: Spice..content,
-                    moreAt: true
-                }
+                group: 'info'
             }
         });
     };

@@ -13,7 +13,7 @@ spice proxy_cache_valid => "200 1d"; # defaults to this automatically
 spice wrap_jsonp_callback => 0; # only enable for non-JSONP APIs (i.e. no &callback= parameter)
 
 # API endpoint - https://duck.co/duckduckhack/spice_attributes#spice-codetocode
-spice to => 'https://developers.zomato.com/api/v2.1/search?entity_id=6&entity_type=city&count=10&api_key={{ENV{DDG_ZOMATO_API_KEY}}}&callback={{callback}}';
+spice to => 'https://developers.zomato.com/api/v2.1/search?entity_id=6&entity_type=city&count=1&api_key={{ENV{DDG_ZOMATO_API_KEY}}}&jsonp={{callback}}';
 
 # Triggers - https://duck.co/duckduckhack/spice_triggers
 triggers any => 'restaurants in hyderabad';
